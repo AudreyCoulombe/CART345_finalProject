@@ -1,7 +1,7 @@
 {
   "name": "starterfilesweek10",
   "version": "1.0.0",
-  "description": "",
+  "description": "Warsan Shire poems:     https://www.poetryfoundation.org/poets/warsan-shire      https://www.poemhunter.com/warsan-shire/       https://genius.com/artists/Warsan-shire",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,6 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "natural": "^5.2.3"
-  }
+    "natural": "^5.2.3",
+    "node-static": "^0.7.11"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AudreyCoulombe/CART345_finalProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AudreyCoulombe/CART345_finalProject/issues"
+  },
+  "homepage": "https://github.com/AudreyCoulombe/CART345_finalProject#readme"
 }

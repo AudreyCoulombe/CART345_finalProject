@@ -1,0 +1,82 @@
+#title{
+  position:sticky;
+  top:0px;
+  left:20px;
+  width:fit-content;
+  height: 12vh;
+  border: 1px solid  #000000;
+  margin: 0px 0px;
+  padding: 0px 0px;
+}
+
+#columnContainer{
+  width:fit-content;
+  /* width:200vw; */
+  height: 85vh;
+  /* position:relative; */
+  border: 1px solid  #000000;
+  /* overflow-x: scroll; */
+  width: max-content;
+  overflow-y:hidden; 
+
+}
+.column {
+    position: static;
+    /* top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    width: auto;
+    height: 100%;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    /* display: inline-block; */
+    float: left;
+    /* background-color: #a7a7a7; */
+    border: 1px solid  #000000;
+    /* height: auto; */
+    
+  }
+
+
+  #textInput {
+    position: relative;
+    top:50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    margin: 0;
+  }
+
+
+  .container { 
+    height: 200px;
+    position: relative;
+    border: 3px solid green; 
+  }
+  
+  .vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .wordButtons{
+    position: static;
+    display: block;
+    background-color: white;
+    color:black;
+    border: 0px solid white;
+    /* margin-top: 10vh; */
+    /* padding-top: 100%; */
+    /* top: 20%; */
+    /* top: 50%; */
+    /* top:32%; */
+  }
+  .wordButtons:hover{
+    display: block;
+    font-size: x-large;
+    /* background-color: rgb(241, 79, 230); */
+    color:black;
+    border: 0px solid white;
+  }

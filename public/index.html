@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+
+    <!-- CSS stylesheet(s) -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- My script(s) -->
+    <script src="script.js"></script>
+  </head>
+
+  <body>
+    <div id="title">
+      <h1 style="display: inline; ">Schrödinger's Poems</h1>
+      <h3 style="display: inline; "> -------- A word of possibilities</h3>
+      <p>Word prediction based on a selection of Warsan Shire's poems</p>
+    </div>
+    <div id="columnContainer">
+      <div id="userInput" class="column">
+        <!-- <p>What is your country of origin?</p> -->
+        <!-- <p style="font-size: 20px;">(e.g. Canadian, Algerian, Indian, etc.)</p> -->
+        <input
+          type="text"
+          class="textInput"
+          id="textInput"
+          onfocus="this.value=''"
+          value="Begin typing a sentence, then hit enter..."
+          style="width: 300px"
+        />
+        <input type="button" value="Next" id="textInputButton" style="visibility: hidden;"/>
+        <!-- script to make as if the button is pressed when the user hits enter -->
+        <script>
+          document.getElementById("textInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+              event.preventDefault();
+              document.getElementById("textInputButton").click();
+            }
+          });
+          </script>
+      </div>
+      <!-- <div class="column">Hello world</div> -->
+
+
+
+    </div>
+    
+  </body>
+
+</html>
