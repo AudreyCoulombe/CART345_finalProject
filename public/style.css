@@ -4,7 +4,6 @@
   left:20px;
   width:fit-content;
   height: 12vh;
-  /* border: 1px solid  #000000; */
   margin: 0px 0px;
   padding: 0px 0px;
   background-color: white;
@@ -14,32 +13,16 @@
 #columnContainer{
   margin-left:15px;
   width:fit-content;
-  /* width:200vw; */
   height: 85vh;
-  /* position:relative; */
-  /* border: 1px solid  #000000; */
-  /* overflow-x: scroll; */
   width: max-content;
-  /* overflow-y:hidden;  */
-  
-
 }
 .column {
     position: static;
-    /* top:50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%); */
     width: auto;
     height: 100%;
     padding: 0px 0px;
     margin: 0px 0px;
-    /* display: inline-block; */
     float: left;
-    /* background-color: #a7a7a7; */
-    /* border: 1px solid  #000000; */
-    /* height: auto; */
-    /* overflow: visible; */
-    
   }
 
 
@@ -47,25 +30,7 @@
     position: relative;
     left:-100px;
     top: -15%;
-    /* -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    margin: 0; */
   }
-
-
-  /* .container { 
-    height: 200px;
-    position: relative;
-    border: 3px solid green; 
-  } */
-/*   
-  .vertical-center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  } */
 
   .wordButtons{
     position: static;
@@ -73,18 +38,15 @@
     background-color: rgba(255, 255, 255, 0);
     color:black;
     border: 0px solid rgba(255, 255, 255, 0);
-    /* left: 100%; */
     margin-right: 100%;
-    /* margin-left: 10%; */
     -ms-transform: translateX(-50%);
     transform: translateX(50%);
     margin-left: auto;
   }
-  
+
   .wordButtons:hover{
     display: block;
     font-size: x-large;
-    /* background-color: rgb(241, 79, 230); */
     color:black;
     border: 0px solid white;
     transform: translateX(-3%);

@@ -18,8 +18,6 @@ function go() {
     url: "/getWordData",
     timeout: 600000,
     success: function (response) {
-      //parseResponse(response);
-     //  console.log(response);
      wordData=response;
      console.log(wordData);
     },
@@ -54,15 +52,13 @@ function wordPrediction(selectedWord){
 
       // console.log(`spacing: ${spacing}`);
       for (let j=0; j<possibilityKeys.length; j++) {
-        // let opacity = getOpacity(possibilityValues[j], minPossibility, maxPossibility);
+
         let opacity = (((possibilityValues[j] - minPossibility) * (1 - 0.4)) / (maxPossibility - minPossibility)) + 0.3;
 
 
         let wordButton = $('<input />', { type: 'button', class: 'wordButtons', id: possibilityKeys[j], value: possibilityKeys[j], style:`margin-top:${spacing-2}vh; opacity:${opacity}`}).appendTo(newColumn);
         $(wordButton).click(function(){
-        // $(`#${possibilityKeys[j]}`).click(function(){
           console.log("button clicked");
-          // wordButton.style.color = "red";
           $(this).css("color", "red");
           $(this).css("font-size", "x-large");
           $(this).css("transform", "translateX(-3%)");
@@ -71,11 +67,4 @@ function wordPrediction(selectedWord){
       }
     }
   }
-}
-
-
-// set opacity of the word proportionally to its TF-IDF
-function getOpacity(possibilityValue, minPossibility, maxPossibility) {
-  let opacity = (((possibilityValue - minPossibility) * (1 - 0)) / (maxPossibility - minPossibility)) + 0;
-  return opacity;
 }

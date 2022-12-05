@@ -1,4 +1,9 @@
-/* Run "node WarsanShire.js" is terminal and go to http://localhost:4200/ in browser */
+/* 
+  To make it work: 
+    - If node modules aren't installed, run "npm init" in terminal
+    - Then run "node WarsanShire.js" is terminal and go to http://localhost:4200/ in browser 
+*/
+
 
 /********************************* Server setup ********************************/
 // Import the Express library
@@ -23,13 +28,15 @@ let static = require("node-static"); // require static node module
 const { response } = require("express");
 app.use(express.static(__dirname + "/public")); // to set the public directory as visible/usable by client (static)
 
+
 /****************************** Setup Natural + global variables *****************/
 let natural = require("natural");
 let fs = require("fs");
 let warsanShirePoems = fs.readFileSync("files/WarsanShireTexts.txt", "utf8");
 // let warsanShirePoems = "the wind in the hair and the hair in the head";
 
-/********************************************* WARSAN SHIRE'S WORD COUNT *****************************************/
+
+/********************************** WARSAN SHIRE'S WORD COUNT *****************************************/
 
 // Access wordCount.js file and create a new instance of WordCount class (from wordCount.js)
 const WordCount = require("./wordCount");
@@ -44,8 +51,15 @@ shireWordCount.sortByCount();
 // To get the count item
 // console.log(shireWordCount.dict[shireWordCount.keys[0]]);
 
+
+/********************************************* BIGRAMS *****************************************/
+
 let NGrams = natural.NGrams;
 let bigrams = NGrams.bigrams(warsanShirePoems);
+// console.log(bigrams);
+
+
+/**************** POSSIBILITIES AND PROBABILITIES FOR NEXT WORD ***************************/
 
 let possibilitiesDic = [];
 for (let i=0; i<shireWordCount.keys.length; i++) {

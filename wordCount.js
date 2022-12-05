@@ -36,9 +36,6 @@ class WordCount{
         //if it is then increment the dict count
           this.addToDict(token);
       }
-  
-  
-  
     }
   }
   
