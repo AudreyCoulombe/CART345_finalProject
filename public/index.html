@@ -15,21 +15,16 @@
 
   <body>
     <div id="title">
-      <h1 style="display: inline; ">Schrödinger's Poems</h1>
-      <h3 style="display: inline; "> -------- A word of possibilities</h3>
-      <p>Word prediction based on a selection of Warsan Shire's poems</p>
-    </div>
-    <div id="columnContainer">
-      <div id="userInput" class="column">
-        <!-- <p>What is your country of origin?</p> -->
-        <!-- <p style="font-size: 20px;">(e.g. Canadian, Algerian, Indian, etc.)</p> -->
-        <input
+      <h1 style="display: inline; ">A word of possibilities</h1>
+      <!-- <h3 style="display: inline; "> -------- Schrödinger's Poems</h3> -->
+      <p style="position: relative; top: -10%;">Word prediction based on a selection of Warsan Shire's poems</p>
+      <input
           type="text"
           class="textInput"
           id="textInput"
-          onfocus="this.value=''"
+          
           value="Begin typing a sentence, then hit enter..."
-          style="width: 300px"
+          style="width: 300px; margin-left: 100px;"
         />
         <input type="button" value="Next" id="textInputButton" style="visibility: hidden;"/>
         <!-- script to make as if the button is pressed when the user hits enter -->
@@ -41,6 +36,12 @@
             }
           });
           </script>
+    </div>
+    <div id="columnContainer">
+      <div id="userInput" class="column">
+        <!-- <p>What is your country of origin?</p> -->
+        <!-- <p style="font-size: 20px;">(e.g. Canadian, Algerian, Indian, etc.)</p> -->
+        
       </div>
       <!-- <div class="column">Hello world</div> -->
 

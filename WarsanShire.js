@@ -1,3 +1,5 @@
+/* Run "node WarsanShire.js" is terminal and go to http://localhost:4200/ in browser */
+
 /********************************* Server setup ********************************/
 // Import the Express library
 let express = require("express");
@@ -25,16 +27,13 @@ app.use(express.static(__dirname + "/public")); // to set the public directory a
 let natural = require("natural");
 let fs = require("fs");
 let warsanShirePoems = fs.readFileSync("files/WarsanShireTexts.txt", "utf8");
+// let warsanShirePoems = "the wind in the hair and the hair in the head";
 
 /********************************************* WARSAN SHIRE'S WORD COUNT *****************************************/
-/*(For each word in WARSAN SHIRE's texts, check how many times it was used and store the most used in an array)*/
 
 // Access wordCount.js file and create a new instance of WordCount class (from wordCount.js)
 const WordCount = require("./wordCount");
 let shireWordCount = new WordCount();
-
-// // Look at Warsan Shire's poems in files folder
-// // let warsanShirePoems = fs.readFileSync("files/WarsanShireTexts.txt", "utf8");
 
 shireWordCount.process(warsanShirePoems);
 shireWordCount.sortByCount();
@@ -47,35 +46,44 @@ shireWordCount.sortByCount();
 
 let NGrams = natural.NGrams;
 let bigrams = NGrams.bigrams(warsanShirePoems);
-// console.log(bigrams);
-// to get the first word of the first bigram
-// console.log(bigrams[0][0]);
 
-let probabilitiesDic = [];
+let possibilitiesDic = [];
 for (let i=0; i<shireWordCount.keys.length; i++) {
   let word = {
     firstWord: shireWordCount.keys[i],
-    followingWords: []
+    followingWords: [],
   };
 
   for (let j=0; j<bigrams.length; j++) {
     if (word.firstWord == bigrams[j][0]) {
-      // console.log(word.firstWord)
       word.followingWords.push(bigrams[j][1]);
     }
   }
-  probabilitiesDic.push(word);
+  possibilitiesDic.push(word);
 }
-console.log(probabilitiesDic);
 
+for (let i=0; i<possibilitiesDic.length; i++){
+  let wordProbability = new WordCount();
+  
+  wordProbability.process(`${possibilitiesDic[i].followingWords}`);
+  wordProbability.sortByCount();
 
+  Object.assign(possibilitiesDic[i], {
+    nextWordProbability: {}
+  });
 
-
-
+  for (let j = 0; j < wordProbability.keys.length; j++) {
+    let probKey = wordProbability.keys[j];
+    let probValue = wordProbability.dict[wordProbability.keys[j]];
+    let obj = possibilitiesDic[i].nextWordProbability;
+    obj[probKey] = probValue;
+  }  
+}
+console.log(possibilitiesDic);
 
 app.get("/getWordData", sendWordData);
 
 function sendWordData(request, response) {
-  response.send(probabilitiesDic);
+  response.send(possibilitiesDic);
 }
 
